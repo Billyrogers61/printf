@@ -1,9 +1,9 @@
-.TH _printf 3 "27 February 2018" "1.0" "custom man page"
+.TH _printf 3 "4 October 2021" "v1.0" "custom man page"
 .SH NAME
 .B _printf
 - formatted output conversion
 .SH SYNOPSIS
-.B #include "holberton.h"
+.B #include "main.h"
 .sp
 int _printf(const char *format, ...);
 .SH DESCRIPTION
