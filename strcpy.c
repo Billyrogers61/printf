@@ -5,7 +5,7 @@
  * @src: source file
  * Return: array
  */
-char *_strcpy(char *dest, chr *src)
+char *_strcpy(char *dest, char *src)
 {
 	int x = 0;
 

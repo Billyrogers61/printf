@@ -5,6 +5,19 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+/**
+* struct convert - defines a structure for symbols and functions
+*
+* @sym: The operator
+* @f: The function associated
+*/
+struct convert
+{
+	char *sym;
+	int (*f)(va_list);
+};
+typedef struct convert conver_t;
+
 /* helper functions*/
 char *_strcpy(char *dest, char *src);
 int _strlen(char *s);
@@ -28,16 +41,5 @@ int print_unsgined_number(unsigned int n);
 
 
 
-/**
- * struct convert- defines a structure for symbols and functions
- * @sym: The operator
- * @f: the function associated
- */
-struct convert
-{
-	char *sym;
-	int (*f)(va_list);
-};
-typedef struct convert conver_t;
 
 #endif /* MAIN_H */

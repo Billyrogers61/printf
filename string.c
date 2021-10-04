@@ -13,8 +13,8 @@ int print_s(va_list list)
 	if (s == NULL)
 		s = "(null)";
 
-	for (i = 0; str[i] != '\0'; i++)
-		_write_char(str[i]);
+	for (i = 0; s[i] != '\0'; i++)
+		_write_char(s[i]);
 	return (i);
 
 }
