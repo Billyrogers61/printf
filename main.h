@@ -8,16 +8,16 @@
 /* helper functions*/
 char *_strcpy(char *dest, char *src);
 int _strlen(char *s);
+void write_base(char *str);
 
 /*Printf functions*/
 int _printf(const char *format, ...);
-char *print_s(va_list list);
-char *print_c(va_list list);
+int print_s(va_list list);
+int print_c(va_list list);
 int _write_char(char c);
 int print_percent(__attribute__((unused))va_list list);
-char *itob(va_list list);
-char *_itos(int div, int length, int n);
-char *print_d(va_list list);
+int print_binary(va_list list);
+int print_integer(va_list);
 
 
 
