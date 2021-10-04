@@ -22,14 +22,15 @@ char *print_d(va_list list);
 
 
 /**
- * struct types - struct
- * @id: identifier of type (e.g. c means char)
- * @func: ptr to functions that print according to identifier
+ * struct convert- defines a structure for symbols and functions
+ * @sym: The operator
+ * @f: the function associated
  */
-typedef struct types
+struct convert
 {
-	char id;
-	char* (*func)(va_list);
-} print;
+	char *sym;
+	int (*f)(va_list);
+};
+typedef struct convert conver_t;
 
 #endif /* MAIN_H */
