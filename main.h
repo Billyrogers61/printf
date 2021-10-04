@@ -13,6 +13,8 @@ int _strlen(char *s);
 int _printf(const char *format, ...);
 char *print_s(va_list list);
 char *print_c(va_list list);
+int _write_char(char c);
+int print_percent(__attribute__((unused))va_list list);
 char *itob(va_list list);
 char *_itos(int div, int length, int n);
 char *print_d(va_list list);
