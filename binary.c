@@ -1,39 +1,41 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
- * itob - Change to binary.
- * @list: int to change.
- * Return: string with binary.
+ * print_binary - Converts a number from base 10 to binary
+ * @list: List of arguments passed to this function
+ * Return: The length of the number printed
  */
-char *itob(va_list list)
+int print_binary(va_list list)
 {
-	int j = 0, twos = 1;
-	int i, k;
-	char *s;
+	unsigned int num;
+	int i, len;
+	char *str;
+	char *rev_str;
 
-	k = va_arg(list, int);
-	i = k;
+	num = va_arg(list, unsigned int);
+	if (num == 0)
+		return (_write_char('0'));
+	if (num < 1)
+		return (-1);
+	len = base_len(num, 2);
+	str = malloc(sizeof(char) * len + 1);
+	if (str == NULL)
+		return (-1);
 
-	/*malloc up to max int in binary */
-	s = malloc(sizeof(char) * 33);
-	if (s == NULL)
-		return (NULL);
-
-	/* account for negative numbers with '1' at index 0 */
-	if (k < 0)
+	for (i = 0; num > 0; i++)
 	{
-		s[0] = 1 + '0';
-		j++;
-		k *= -1;
-		i *= -1;
+		if (num % 2 == 0)
+			str[i] = '0';
+		else
+			str[i] = '1';
+		num = num / 2;
 	}
-
-	/* find biggest power of 2 */
-	while (k > 1)
-	{
-		k /= 2;
-		twos *= 2;
-	}
-	s[j] = '\0';
-	return (s);
+	str[i] = '\0';
+	rev_str = rev_string(str);
+	if (rev_str == NULL)
+		return (-1);
+	write_base(rev_str);
+	free(str);
+	free(rev_str);
+	return (len);
 }
