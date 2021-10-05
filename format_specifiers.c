@@ -1,20 +1,20 @@
 #include "main.h"
 /**
- * print_c - returns char as string
+ * print_char - returns char as string
  * @list: char
  * Return: String version of char
  */
-int print_c(va_list list)
+int print_char(va_list list)
 {
 	_write_char(va_arg(list, int));
 	return (1);
 }
 /**
- * print_s - takes string and return string
+ * print_string - takes string and return string
  * @list: string
  * Return: string
  */
-int print_s(va_list list)
+int print_string(va_list list)
 {
 	char *s;
 	int i;

@@ -29,8 +29,8 @@ int hex_check(int, char);
 
 /*Printf functions*/
 int _printf(const char *format, ...);
-int print_s(va_list);
-int print_c(va_list);
+int print_string(va_list);
+int print_char(va_list);
 int _write_char(char);
 int print_percent(va_list);
 int print_binary(va_list);
